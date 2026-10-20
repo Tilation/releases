@@ -11,10 +11,12 @@ Public **binary distribution namespace** for the private-source project
   artifact retrieval. No private GitHub source repository credentials will be
   embedded in the console.
 
-This directory contains **documentation only** until signed manifests, an
-independent launcher and verified release artifacts have completed their
-implementation and acceptance tests. A commit, a checksum by itself, or an
-Actions artifact is **not** an authenticated update.
+Signed **Development** manifest and ARM64 application artifacts are now published
+in [`development/`](development/). They are authenticated only when used with
+the trusted P-256 public key pinned in a separately installed bootstrap launcher.
+The updater bootstrap is not yet physically validated on KNULLI; do not treat
+these artifacts as automatically installable until that validation passes.
+A commit or a checksum alone is **not** an authenticated update.
 
 ## Distribution boundaries
 
@@ -33,4 +35,6 @@ The full specification is tracked in the private project's [updater issue
 #28](https://github.com/Tilation/RG35XXH-Store/issues/28) and signing issue
 [#27](https://github.com/Tilation/RG35XXH-Store/issues/27).
 
-**No download or installer is available from this namespace yet.**
+**Current status:** Development artifacts are published; Stable releases and a
+validated first-install updater package are pending. A signed Development ZIP
+is an updater payload, not a stand-alone Ports installer.
